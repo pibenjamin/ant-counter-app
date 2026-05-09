@@ -1,0 +1,36 @@
+.canvas-container {
+    position: relative;
+    padding: 20px;
+    background: #fafafa;
+    min-height: 500px;
+    max-height: 80vh;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.canvas-container.dragging {
+    scroll-behavior: auto;
+    cursor: grabbing !important;
+}
+
+#canvas {
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    cursor: crosshair;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    user-select: none;
+}
+
+#canvas.draggable {
+    cursor: grab;
+}
+
+#canvas.dragging {
+    cursor: grabbing !important;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

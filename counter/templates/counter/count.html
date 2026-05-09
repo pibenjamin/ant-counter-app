@@ -1,0 +1,93 @@
+{% extends "counter/base.html" %}
+{% load static %}
+{% block title %}Comptage - {{ image.title|default:image.image.name }}{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'counter/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+    <div class="bg-success text-white p-3 text-center">
+        <h4 class="mb-0">🐜 Comptage manuel</h4>
+    </div>
+
+    <div class="controls d-flex flex-wrap gap-3 p-3 bg-light border-bottom align-items-center">
+        <div class="control-group">
+            <label class="fw-bold me-2">Espèce :</label>
+            <input type="text" id="species" class="form-control form-control-sm d-inline-block" style="width:200px;"
+                   value="{{ image.species|default:'Messor barbarus' }}">
+        </div>
+        <div class="control-group">
+            <label class="fw-bold me-2">Zoom :</label>
+            <input type="range" id="zoomLevel" class="form-range d-inline-block" style="width:150px;"
+                   min="100" max="500" value="100" step="10">
+            <span id="zoomDisplay" class="badge bg-secondary">100%</span>
+        </div>
+        <div class="control-group">
+            <label class="fw-bold me-2">Grille :</label>
+            <select id="gridSize" class="form-select form-select-sm d-inline-block" style="width:auto;">
+                <option value="0">Pas de grille</option>
+                <option value="2">2x2</option>
+                <option value="3">3x3</option>
+                <option value="4" selected>4x4</option>
+                <option value="5">5x5</option>
+                <option value="6">6x6</option>
+                <option value="8">8x8</option>
+            </select>
+        </div>
+        <button class="btn btn-danger btn-sm" onclick="undoLast()">↶ Annuler</button>
+        <button class="btn btn-warning btn-sm" onclick="resetAll()">🔄 Reset</button>
+        <button class="btn btn-primary btn-sm" onclick="saveAnnotations()">💾 Sauvegarder</button>
+        <button class="btn btn-info btn-sm" onclick="downloadResults()">💾 Télécharger</button>
+    </div>
+
+    <div class="counter-display bg-warning bg-opacity-10 p-3 text-center border-bottom">
+        <h3>Total : <span class="text-success fw-bold" id="totalCount">0</span>
+            <span id="speciesDisplay">fourmis</span></h3>
+    </div>
+
+    <div class="canvas-container" id="canvasContainer">
+        <div id="placeholder" class="text-center p-5 text-muted" style="display:none;">
+            <h3>📸 Chargez une photo</h3>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="stats p-3 bg-light">
+        <div class="row text-center g-3">
+            <div class="col-md-4">
+                <div class="p-3 text-white rounded" style="background:linear-gradient(135deg,#667eea,#764ba2);">
+                    <h6>Fourmis comptées</h6>
+                    <span class="fs-3 fw-bold" id="statCount">0</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 text-white rounded" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">
+                    <h6>Espèce</h6>
+                    <span class="fs-5" id="statSpecies">{{ image.species|default:"-" }}</span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 text-white rounded" style="background:linear-gradient(135deg,#fa709a,#fee140);">
+                    <h6>Temps</h6>
+                    <span class="fs-5" id="statTime">0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    window.IMAGE_URL = "{{ image.image.url }}";
+    window.IMAGE_ID = {{ image.pk }};
+    window.IMAGE_WIDTH = {{ image.width }};
+    window.IMAGE_HEIGHT = {{ image.height }};
+    window.EXISTING_ANNOTATIONS = {{ annotations|safe }};
+    window.SAVE_URL = "{% url 'counter:save_annotations' image.pk %}";
+    window.CSRF_TOKEN = "{{ csrf_token }}";
+</script>
+<script src="{% static 'counter/js/counter.js' %}"></script>
+{% endblock %}

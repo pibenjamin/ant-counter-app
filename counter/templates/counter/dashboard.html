@@ -1,0 +1,55 @@
+{% extends "counter/base.html" %}
+{% block title %}Tableau de bord - AntCounter{% endblock %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-bg-success">
+            <div class="card-body text-center">
+                <h5 class="card-title">Images uploadées</h5>
+                <p class="display-6">{{ total_images }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-bg-primary">
+            <div class="card-body text-center">
+                <h5 class="card-title">Fourmis comptées</h5>
+                <p class="display-6">{{ total_ants }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-bg-warning">
+            <div class="card-body text-center">
+                <h5 class="card-title">Action</h5>
+                <a href="{% url 'counter:upload' %}" class="btn btn-light mt-2">+ Uploader une photo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Dernières images</h4>
+<div class="row">
+    {% for img in images %}
+        <div class="col-md-4 col-lg-3 mb-3">
+            <div class="card h-100">
+                <a href="{% url 'counter:count' img.pk %}">
+                    <img src="{{ img.image.url }}" class="card-img-top" style="height:180px;object-fit:cover;" alt="{{ img.title }}">
+                </a>
+                <div class="card-body">
+                    <h6 class="card-title">{{ img.title|default:img.image.name|truncatechars:30 }}</h6>
+                    <p class="card-text small text-muted">
+                        {{ img.annotations.count }} annotations<br>
+                        {{ img.uploaded_at|date:"d/m/Y H:i" }}
+                    </p>
+                    <a href="{% url 'counter:count' img.pk %}" class="btn btn-sm btn-outline-success">Compter</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">Aucune image uploadée. <a href="{% url 'counter:upload' %}">Uploader votre première photo</a>.</div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

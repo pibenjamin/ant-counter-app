@@ -1,0 +1,53 @@
+{% extends "counter/base.html" %}
+{% block title %}Historique - AntCounter{% endblock %}
+{% block content %}
+<h4>📊 Historique des comptages</h4>
+
+{% if images %}
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="table-success">
+                <tr>
+                    <th>Image</th>
+                    <th>Titre</th>
+                    <th>Espèce</th>
+                    <th>Annotations</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for img in images %}
+                <tr>
+                    <td><img src="{{ img.image.url }}" style="width:60px;height:60px;object-fit:cover;border-radius:4px;"></td>
+                    <td>{{ img.title|default:"-" }}</td>
+                    <td>{{ img.species|default:"-" }}</td>
+                    <td><span class="badge bg-primary">{{ img.annotations.count }}</span></td>
+                    <td>{{ img.uploaded_at|date:"d/m/Y H:i" }}</td>
+                    <td>
+                        <a href="{% url 'counter:count' img.pk %}" class="btn btn-sm btn-success">Compter</a>
+                        <button class="btn btn-sm btn-danger delete-btn" data-id="{{ img.pk }}">Suppr.</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% else %}
+    <div class="alert alert-info">Aucune image pour le moment.</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (!confirm('Supprimer cette image et ses annotations ?')) return;
+        const id = this.dataset.id;
+        fetch(`/api/delete-image/${id}/`, { method: 'POST', headers: {'X-CSRFToken': '{{ csrf_token }}'} })
+            .then(r => r.json())
+            .then(data => { if (data.status === 'ok') location.reload(); });
+    });
+});
+</script>
+{% endblock %}
