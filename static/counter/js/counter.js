@@ -170,8 +170,8 @@ function redraw() {
     // Markers
     clicks.forEach((c, i) => {
         const hue = (i * 40) % 360;
-        const ms = 10 * currentZoom;
-        const fs = Math.max(12, 16 * currentZoom);
+        const ms = 5 * currentZoom;
+        const fs = Math.max(6, 8 * currentZoom);
         ctx.beginPath();
         ctx.arc(c.x * currentZoom, c.y * currentZoom, ms, 0, 2 * Math.PI);
         ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
