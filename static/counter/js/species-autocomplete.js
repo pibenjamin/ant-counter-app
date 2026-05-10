@@ -42,11 +42,13 @@
 
     function renderDropdown(data) {
         dropdown.innerHTML = "";
-        results = data || [];
+        results = (data || []).filter(function (item) {
+            return item.family === "Formicidae";
+        });
 
         if (results.length === 0) {
             var div = document.createElement("div");
-            div.textContent = "Aucune espèce trouvée";
+            div.textContent = "Aucune fourmi trouvée";
             div.style.cssText = "padding:8px 12px;color:#999;font-size:13px;";
             dropdown.appendChild(div);
             dropdown.style.display = "block";
@@ -69,7 +71,7 @@
                 "<strong>" + escapeHtml(name) + "</strong>" +
                 " <span style='color:#888;font-size:12px;'>" +
                 escapeHtml(authorDate) + " " +
-                escapeHtml(item.family || "Formicidae") + "</span>";
+                "Formicidae</span>";
 
             div.addEventListener("click", function () { selectItem(i); });
             div.addEventListener("mouseenter", function () { highlightItem(i); });
