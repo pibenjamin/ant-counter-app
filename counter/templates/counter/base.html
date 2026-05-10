@@ -31,7 +31,7 @@
                         <span class="nav-link text-light">{{ user.username }}</span>
                     </li>
                     <li class="nav-item">
-                        <form method="post" action="{% url 'accounts:logout' %}" class="d-inline">
+                        <form method="post" action="{% url 'account_logout' %}" class="d-inline">
                             {% csrf_token %}
                             <button type="submit" class="nav-link btn btn-link border-0 bg-transparent">Déconnexion</button>
                         </form>

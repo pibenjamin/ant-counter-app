@@ -1,0 +1,18 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: [AntCounter] Confirmez votre adresse e-mail
+From: webmaster@localhost
+To: benjaminpiscart+2@gmail.com
+Date: Sun, 10 May 2026 15:01:31 -0000
+Message-ID: <177842529120.12696.17261073244961655442@Benjamin>
+
+Bonjour, c'est AntCounter !
+
+Vous recevez cet e-mail car l'utilisateur benny a indiqué votre adresse pour se connecter à son compte sur 127.0.0.1:8000.
+
+Pour confirmer que cela est correct, allez sur http://127.0.0.1:8000/accounts/confirm-email/Mw:1wM5et:-vWM_9nCJIxeDpPERwhn-OreXYJuLphby4ZV2pBNOYM/
+
+Merci d'utiliser AntCounter !
+127.0.0.1:8000
+-------------------------------------------------------------------------------

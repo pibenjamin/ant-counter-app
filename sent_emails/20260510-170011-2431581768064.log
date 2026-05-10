@@ -1,0 +1,22 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?q?=5BAntCounter=5D_E-mail_de_r=C3=A9initialisation_de_mot_de_passe?=
+From: webmaster@localhost
+To: benjaminpiscart+2@gmail.com
+Date: Sun, 10 May 2026 15:00:11 -0000
+Message-ID: <177842521147.12696.8639870269333451151@Benjamin>
+
+Bonjour, c'est AntCounter !
+
+Vous recevez cet e-mail car vous ou quelqu'un d'autre a demandé une réinitialisation de mot de passe pour votre compte utilisateur.
+Vous pouvez simplement ignorer ce message si vous n'êtes pas à l'origine de cette demande. Sinon, cliquez sur le lien ci-dessous pour réinitialiser votre mot de passe.
+
+http://127.0.0.1:8000/accounts/password/reset/key/5-d8dgkb-a7d02159f5e7a98dec4403b020b3dd26/
+
+Au cas où vous l'auriez oublié, votre nom d'utilisateur est benny.
+
+Merci d'utiliser AntCounter !
+127.0.0.1:8000
+-------------------------------------------------------------------------------

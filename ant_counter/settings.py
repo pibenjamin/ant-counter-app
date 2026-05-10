@@ -15,8 +15,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     "crispy_forms",
     "crispy_bootstrap5",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "axes",
     "accounts",
     "counter",
 ]
@@ -29,6 +34,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
+    "axes.middleware.AxesMiddleware",
 ]
 
 ROOT_URLCONF = "ant_counter.urls"
@@ -66,7 +73,46 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
 ]
+
+AUTHENTICATION_BACKENDS = [
+    "axes.backends.AxesStandaloneBackend",
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+
+# ── django-allauth ──────────────────────────
+ACCOUNT_LOGIN_METHODS = {"email", "username"}
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_FORMS = {"signup": "accounts.forms.AutoUsernameSignupForm"}
+ACCOUNT_RATE_LIMITS = {
+    "login_failed": "5/5m",
+    "signup": "3/h",
+}
+
+# ── django-axes (brute-force protection) ────
+AXES_ENABLED = config("AXES_ENABLED", default=True, cast=bool)
+AXES_FAILURE_LIMIT = 5
+AXES_COOLOFF_TIME = 0.08333  # 5 minutes
+AXES_RESET_ON_SUCCESS = True
+AXES_LOCKOUT_PARAMETERS = [["username", "ip_address"]]
+
+# ── Session / Cookie security ───────────────
+SESSION_COOKIE_AGE = 86400  # 24h
+SESSION_COOKIE_HTTPONLY = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+CSRF_COOKIE_HTTPONLY = True
 
 LANGUAGE_CODE = "fr-fr"
 TIME_ZONE = "Europe/Paris"
@@ -79,9 +125,11 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-LOGIN_URL = "accounts:login"
+LOGIN_URL = "account_login"
 LOGIN_REDIRECT_URL = "counter:dashboard"
-LOGOUT_REDIRECT_URL = "accounts:login"
+LOGOUT_REDIRECT_URL = "account_login"
+ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
+ACCOUNT_SIGNUP_REDIRECT_URL = "counter:dashboard"
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
