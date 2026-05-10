@@ -10,10 +10,7 @@ class LargeImageFilter(admin.SimpleListFilter):
     parameter_name = "large"
 
     def lookups(self, request, model_admin):
-        return (
-            ("yes", "Oui"),
-            ("no", "Non"),
-        )
+        return (("yes", "Oui"), ("no", "Non"))
 
     def queryset(self, request, queryset):
         if self.value() == "yes":
