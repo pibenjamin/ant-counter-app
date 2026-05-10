@@ -84,8 +84,16 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+EMAIL_BACKEND = config("EMAIL_BACKEND", default="django.core.mail.backends.filebased.EmailBackend")
+EMAIL_FILE_PATH = BASE_DIR / config("EMAIL_FILE_PATH", default="sent_emails")
+
+if "smtp" in EMAIL_BACKEND:
+    EMAIL_HOST = config("EMAIL_HOST")
+    EMAIL_PORT = config("EMAIL_PORT", cast=int)
+    EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+    EMAIL_USE_TLS = config("EMAIL_USE_TLS", cast=bool)
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # ── django-allauth ──────────────────────────
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
