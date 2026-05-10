@@ -10,6 +10,7 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1", cast=Csv(
 
 INSTALLED_APPS = [
     "grappelli",
+    "rest_framework",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -111,6 +112,20 @@ ACCOUNT_RATE_LIMITS = {
 }
 
 API_SPECIES_KEY = config("API_SPECIES_KEY")
+
+# ── Django REST Framework ────────────────────
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "accounts.auth.APIKeyAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+    ],
+}
 
 # ── django-axes (brute-force protection) ────
 AXES_ENABLED = config("AXES_ENABLED", default=True, cast=bool)

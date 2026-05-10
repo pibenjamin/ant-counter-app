@@ -7,3 +7,4 @@ crispy-bootstrap5>=2024.1
 django-allauth>=65.0
 django-axes>=8.0
 django-grappelli>=4.1
+djangorestframework>=3.15

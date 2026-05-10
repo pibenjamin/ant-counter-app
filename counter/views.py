@@ -3,10 +3,14 @@ import requests
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.views.decorators.http import require_GET, require_POST
+from django.views.decorators.http import require_POST
 from django.conf import settings
 from django.db import transaction
 from PIL import Image as PILImage
+from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+from accounts.auth import HasValidAccess
 from .models import UserImage, AntAnnotation
 from .forms import ImageUploadForm
 
@@ -14,19 +18,12 @@ from .forms import ImageUploadForm
 GBIF_SUGGEST_URL = "https://api.gbif.org/v1/species/suggest"
 
 
-def _api_key_allowed(request):
-    key = request.headers.get("X-API-Key", "")
-    return key == settings.API_SPECIES_KEY
-
-
-@require_GET
+@api_view(["GET"])
+@permission_classes([HasValidAccess])
 def species_suggest(request):
-    if not request.user.is_authenticated and not _api_key_allowed(request):
-        return JsonResponse({"error": "Non authentifié"}, status=401)
-
     q = request.GET.get("q", "").strip()
     if len(q) < 2:
-        return JsonResponse([], safe=False)
+        return Response([])
 
     try:
         resp = requests.get(
@@ -35,13 +32,13 @@ def species_suggest(request):
             timeout=5,
         )
         if resp.status_code != 200:
-            return JsonResponse({"error": "API GBIF indisponible"}, status=502)
+            return Response({"error": "API GBIF indisponible"}, status=status.HTTP_502_BAD_GATEWAY)
 
         data = [s for s in resp.json() if s.get("family") == "Formicidae"]
-        return JsonResponse(data, safe=False)
+        return Response(data)
 
     except requests.RequestException:
-        return JsonResponse({"error": "Erreur de connexion à GBIF"}, status=502)
+        return Response({"error": "Erreur de connexion à GBIF"}, status=status.HTTP_502_BAD_GATEWAY)
 
 
 @login_required
