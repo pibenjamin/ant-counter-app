@@ -1,5 +1,5 @@
 (function () {
-    const API_URL = "https://api.gbif.org/v1/species/suggest";
+    var API_URL = window.SPECIES_SUGGEST_URL || "/api/species-suggest/";
 
     var input = document.getElementById("id_species") || document.getElementById("species");
     if (!input) return;
@@ -42,9 +42,7 @@
 
     function renderDropdown(data) {
         dropdown.innerHTML = "";
-        results = (data || []).filter(function (item) {
-            return item.family === "Formicidae";
-        });
+        results = data || [];
 
         if (results.length === 0) {
             var div = document.createElement("div");
@@ -86,10 +84,9 @@
     function fetchSpecies(query) {
         if (query.length < 2) return;
 
-        var url = API_URL + "?q=" + encodeURIComponent(query) +
-                  "&rank=SPECIES";
+        var url = API_URL + "?q=" + encodeURIComponent(query);
 
-        fetch(url)
+        fetch(url, { credentials: "same-origin" })
             .then(function (r) {
                 if (!r.ok) throw new Error("HTTP " + r.status);
                 return r.json();

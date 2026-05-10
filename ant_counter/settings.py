@@ -110,6 +110,8 @@ ACCOUNT_RATE_LIMITS = {
     "signup": "3/h",
 }
 
+API_SPECIES_KEY = config("API_SPECIES_KEY")
+
 # ── django-axes (brute-force protection) ────
 AXES_ENABLED = config("AXES_ENABLED", default=True, cast=bool)
 AXES_FAILURE_LIMIT = 5

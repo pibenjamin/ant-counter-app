@@ -1,12 +1,47 @@
 import json
+import requests
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_GET, require_POST
+from django.conf import settings
 from django.db import transaction
 from PIL import Image as PILImage
 from .models import UserImage, AntAnnotation
 from .forms import ImageUploadForm
+
+
+GBIF_SUGGEST_URL = "https://api.gbif.org/v1/species/suggest"
+
+
+def _api_key_allowed(request):
+    key = request.headers.get("X-API-Key", "")
+    return key == settings.API_SPECIES_KEY
+
+
+@require_GET
+def species_suggest(request):
+    if not request.user.is_authenticated and not _api_key_allowed(request):
+        return JsonResponse({"error": "Non authentifié"}, status=401)
+
+    q = request.GET.get("q", "").strip()
+    if len(q) < 2:
+        return JsonResponse([], safe=False)
+
+    try:
+        resp = requests.get(
+            GBIF_SUGGEST_URL,
+            params={"q": q, "rank": "SPECIES"},
+            timeout=5,
+        )
+        if resp.status_code != 200:
+            return JsonResponse({"error": "API GBIF indisponible"}, status=502)
+
+        data = [s for s in resp.json() if s.get("family") == "Formicidae"]
+        return JsonResponse(data, safe=False)
+
+    except requests.RequestException:
+        return JsonResponse({"error": "Erreur de connexion à GBIF"}, status=502)
 
 
 @login_required
