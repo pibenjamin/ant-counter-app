@@ -9,6 +9,7 @@ DEBUG = config("DEBUG", default=True, cast=bool)
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1", cast=Csv())
 
 INSTALLED_APPS = [
+    "grappelli",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -129,6 +130,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -138,6 +140,8 @@ LOGIN_REDIRECT_URL = "counter:dashboard"
 LOGOUT_REDIRECT_URL = "account_login"
 ACCOUNT_LOGOUT_REDIRECT_URL = "account_login"
 ACCOUNT_SIGNUP_REDIRECT_URL = "counter:dashboard"
+
+GRAPPELLI_ADMIN_TITLE = "AntCounter"
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"

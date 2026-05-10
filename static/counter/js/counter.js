@@ -5,12 +5,15 @@ const canvasContainer = document.getElementById('canvasContainer');
 const zoomSlider = document.getElementById('zoomLevel');
 const zoomDisplay = document.getElementById('zoomDisplay');
 const gridSelect = document.getElementById('gridSize');
+const pointSlider = document.getElementById('pointSize');
+const pointDisplay = document.getElementById('pointDisplay');
 
 let clicks = [];
 let image = null;
 let startTime = null;
 let currentZoom = 1.0;
 let currentGrid = 4;
+let pointSize = 5;
 let baseWidth = 0;
 let baseHeight = 0;
 let isDragging = false;
@@ -101,7 +104,7 @@ canvas.addEventListener('contextmenu', function (e) {
     let closest = -1, minDist = Infinity;
     clicks.forEach((c, i) => {
         const d = Math.sqrt((c.x - x) ** 2 + (c.y - y) ** 2);
-        if (d < 20 && d < minDist) { minDist = d; closest = i; }
+        if (d < pointSize * 4 && d < minDist) { minDist = d; closest = i; }
     });
     if (closest !== -1) {
         clicks.splice(closest, 1);
@@ -121,6 +124,13 @@ zoomSlider.addEventListener('input', function () {
 // Grid
 gridSelect.addEventListener('change', function () {
     currentGrid = parseInt(this.value);
+    redraw();
+});
+
+// Point size
+pointSlider.addEventListener('input', function () {
+    pointSize = parseInt(this.value);
+    pointDisplay.textContent = pointSize;
     redraw();
 });
 
@@ -170,7 +180,7 @@ function redraw() {
     // Markers
     clicks.forEach((c, i) => {
         const hue = (i * 40) % 360;
-        const ms = 5 * currentZoom;
+        const ms = pointSize * currentZoom;
         const fs = Math.max(6, 8 * currentZoom);
         ctx.beginPath();
         ctx.arc(c.x * currentZoom, c.y * currentZoom, ms, 0, 2 * Math.PI);
