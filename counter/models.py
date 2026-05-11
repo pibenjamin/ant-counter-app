@@ -3,7 +3,15 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
 
+class UserImageManager(models.Manager):
+    def for_user(self, user):
+        if user.is_staff:
+            return self.all()
+        return self.filter(user=user)
+
+
 class UserImage(models.Model):
+    objects = UserImageManager()
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="images", verbose_name=_("utilisateur"))
     title = models.CharField(max_length=255, blank=True, verbose_name=_("titre"))
     species = models.CharField(max_length=255, blank=True, default="", verbose_name=_("espèce"))

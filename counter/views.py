@@ -72,7 +72,7 @@ def upload_image(request):
 
 @login_required
 def count_view(request, image_id):
-    image = get_object_or_404(UserImage, pk=image_id, user=request.user)
+    image = get_object_or_404(UserImage.objects.for_user(request.user), pk=image_id)
     annotations = AntAnnotation.objects.filter(image=image)
     return render(request, "counter/count.html", {
         "image": image,
@@ -88,7 +88,7 @@ def history(request):
 
 @login_required
 def get_annotations(request, image_id):
-    image = get_object_or_404(UserImage, pk=image_id, user=request.user)
+    image = get_object_or_404(UserImage.objects.for_user(request.user), pk=image_id)
     annotations = AntAnnotation.objects.filter(image=image).values("x", "y", "label")
     return JsonResponse(list(annotations), safe=False)
 
@@ -96,7 +96,7 @@ def get_annotations(request, image_id):
 @login_required
 @require_POST
 def save_annotations(request, image_id):
-    image = get_object_or_404(UserImage, pk=image_id, user=request.user)
+    image = get_object_or_404(UserImage.objects.for_user(request.user), pk=image_id)
     data = json.loads(request.body)
     with transaction.atomic():
         AntAnnotation.objects.filter(image=image).delete()
@@ -116,6 +116,6 @@ def save_annotations(request, image_id):
 @login_required
 @require_POST
 def delete_image(request, image_id):
-    image = get_object_or_404(UserImage, pk=image_id, user=request.user)
+    image = get_object_or_404(UserImage.objects.for_user(request.user), pk=image_id)
     image.delete()
     return JsonResponse({"status": "ok"})
