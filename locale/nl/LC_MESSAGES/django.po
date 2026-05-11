@@ -232,3 +232,9 @@ msgstr "Nederlands"
 
 msgid "Deutsch"
 msgstr "Duits"
+
+msgid "Italiano"
+msgstr "Italiaans"
+
+msgid "Español"
+msgstr "Spaans"

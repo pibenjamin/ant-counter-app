@@ -235,3 +235,9 @@ msgstr "Néerlandais"
 
 msgid "Deutsch"
 msgstr "Allemand"
+
+msgid "Italiano"
+msgstr "Italien"
+
+msgid "Español"
+msgstr "Espagnol"

@@ -1,0 +1,237 @@
+# Spanish translations for AntCounter.
+# Copyright (C) 2026 AntCounter
+# This file is distributed under the same license as the AntCounter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AntCounter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-11 16:00+0100\n"
+"PO-Revision-Date: 2026-05-11 16:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Compteur de Fourmis"
+msgstr "Contador de Hormigas"
+
+msgid "Tableau de bord"
+msgstr "Panel de control"
+
+msgid "Uploader une photo"
+msgstr "Subir una foto"
+
+msgid "Historique"
+msgstr "Historial"
+
+msgid "Déconnexion"
+msgstr "Cerrar sesión"
+
+msgid "Images uploadées"
+msgstr "Imágenes subidas"
+
+msgid "Fourmis comptées"
+msgstr "Hormigas contadas"
+
+msgid "Action"
+msgstr "Acción"
+
+msgid "+ Uploader une photo"
+msgstr "+ Subir una foto"
+
+msgid "Dernières images"
+msgstr "Últimas imágenes"
+
+msgid "annotations"
+msgstr "anotaciones"
+
+msgid "Compter"
+msgstr "Contar"
+
+msgid "Aucune image uploadée."
+msgstr "Ninguna imagen subida."
+
+msgid "Uploader votre première photo"
+msgstr "Sube tu primera foto"
+
+msgid "📸 Uploader une photo"
+msgstr "📸 Subir una foto"
+
+msgid "Uploader et compter"
+msgstr "Subir y contar"
+
+msgid "Comptage"
+msgstr "Conteo"
+
+msgid "🐜 Comptage manuel"
+msgstr "🐜 Conteo manual"
+
+msgid "Espèce"
+msgstr "Especie"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Grille"
+msgstr "Cuadrícula"
+
+msgid "Pas de grille"
+msgstr "Sin cuadrícula"
+
+msgid "Point"
+msgstr "Punto"
+
+msgid "↶ Annuler"
+msgstr "↶ Deshacer"
+
+msgid "🔄 Reset"
+msgstr "🔄 Reiniciar"
+
+msgid "💾 Sauvegarder"
+msgstr "💾 Guardar"
+
+msgid "💾 Télécharger"
+msgstr "💾 Descargar"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "fourmis"
+msgstr "hormigas"
+
+msgid "📸 Chargez une photo"
+msgstr "📸 Cargar una foto"
+
+msgid "Temps"
+msgstr "Tiempo"
+
+msgid "📊 Historique des comptages"
+msgstr "📊 Historial de conteos"
+
+msgid "Image"
+msgstr "Imagen"
+
+msgid "Titre"
+msgstr "Título"
+
+msgid "Annotations"
+msgstr "Anotaciones"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Actions"
+msgstr "Acciones"
+
+msgid "Suppr."
+msgstr "Elim."
+
+msgid "Aucune image pour le moment."
+msgstr "Ninguna imagen por ahora."
+
+msgid "Supprimer cette image et ses annotations ?"
+msgstr "¿Eliminar esta imagen y sus anotaciones?"
+
+msgid "Connexion"
+msgstr "Iniciar sesión"
+
+msgid "Se connecter"
+msgstr "Iniciar sesión"
+
+msgid "Pas de compte ?"
+msgstr "¿Sin cuenta?"
+
+msgid "Inscrivez-vous"
+msgstr "Regístrate"
+
+msgid "Inscription"
+msgstr "Registro"
+
+msgid "S'inscrire"
+msgstr "Registrarse"
+
+msgid "Déjà inscrit ?"
+msgstr "¿Ya registrado?"
+
+msgid "Connectez-vous"
+msgstr "Inicia sesión"
+
+msgid "utilisateur"
+msgstr "usuario"
+
+msgid "titre"
+msgstr "título"
+
+msgid "image"
+msgstr "imagen"
+
+msgid "largeur"
+msgstr "ancho"
+
+msgid "hauteur"
+msgstr "alto"
+
+msgid "uploadé le"
+msgstr "subido el"
+
+msgid "image utilisateur"
+msgstr "imagen de usuario"
+
+msgid "images utilisateurs"
+msgstr "imágenes de usuarios"
+
+msgid "coordonnée X"
+msgstr "coordenada X"
+
+msgid "coordonnée Y"
+msgstr "coordenada Y"
+
+msgid "étiquette"
+msgstr "etiqueta"
+
+msgid "créé le"
+msgstr "creado el"
+
+msgid "annotation fourmi"
+msgstr "anotación de hormiga"
+
+msgid "annotations fourmis"
+msgstr "anotaciones de hormigas"
+
+msgid "Ex: Colonie A - 2024-03-15"
+msgstr "Ej.: Colonia A - 2024-03-15"
+
+msgid "Ex: Messor barbarus"
+msgstr "Ej.: Messor barbarus"
+
+msgid "Ce champ est requis."
+msgstr "Este campo es obligatorio."
+
+msgid "API GBIF indisponible"
+msgstr "API GBIF no disponible"
+
+msgid "Erreur de connexion à GBIF"
+msgstr "Error de conexión a GBIF"
+
+msgid "Français"
+msgstr "Francés"
+
+msgid "English"
+msgstr "Inglés"
+
+msgid "Nederlands"
+msgstr "Neerlandés"
+
+msgid "Deutsch"
+msgstr "Alemán"
+
+msgid "Italiano"
+msgstr "Italiano"
+
+msgid "Español"
+msgstr "Español"

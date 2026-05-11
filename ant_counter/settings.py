@@ -149,6 +149,8 @@ LANGUAGES = [
     ("en", _("English")),
     ("nl", _("Nederlands")),
     ("de", _("Deutsch")),
+    ("it", _("Italiano")),
+    ("es", _("Español")),
 ]
 LOCALE_PATHS = [BASE_DIR / "locale"]
 TIME_ZONE = "Europe/Paris"
