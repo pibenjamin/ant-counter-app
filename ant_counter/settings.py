@@ -21,11 +21,11 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "crispy_forms",
     "crispy_bootstrap5",
+    "accounts",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
     "axes",
-    "accounts",
     "counter",
 ]
 

@@ -6,3 +6,4 @@ __pycache__/
 .env
 media/images/
 staticfiles/
+sent_emails/
