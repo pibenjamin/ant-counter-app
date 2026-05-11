@@ -1,0 +1,234 @@
+# Dutch translations for AntCounter.
+# Copyright (C) 2026 AntCounter
+# This file is distributed under the same license as the AntCounter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AntCounter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-11 16:00+0100\n"
+"PO-Revision-Date: 2026-05-11 16:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Compteur de Fourmis"
+msgstr "Mierenteller"
+
+msgid "Tableau de bord"
+msgstr "Dashboard"
+
+msgid "Uploader une photo"
+msgstr "Foto uploaden"
+
+msgid "Historique"
+msgstr "Geschiedenis"
+
+msgid "Déconnexion"
+msgstr "Uitloggen"
+
+msgid "Images uploadées"
+msgstr "Geüploade afbeeldingen"
+
+msgid "Fourmis comptées"
+msgstr "Mieren geteld"
+
+msgid "Action"
+msgstr "Actie"
+
+msgid "+ Uploader une photo"
+msgstr "+ Foto uploaden"
+
+msgid "Dernières images"
+msgstr "Laatste afbeeldingen"
+
+msgid "annotations"
+msgstr "annotaties"
+
+msgid "Compter"
+msgstr "Tellen"
+
+msgid "Aucune image uploadée."
+msgstr "Geen afbeeldingen geüpload."
+
+msgid "Uploader votre première photo"
+msgstr "Upload je eerste foto"
+
+msgid "📸 Uploader une photo"
+msgstr "📸 Foto uploaden"
+
+msgid "Uploader et compter"
+msgstr "Uploaden & tellen"
+
+msgid "Comptage"
+msgstr "Tellen"
+
+msgid "🐜 Comptage manuel"
+msgstr "🐜 Handmatig tellen"
+
+msgid "Espèce"
+msgstr "Soort"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Grille"
+msgstr "Raster"
+
+msgid "Pas de grille"
+msgstr "Geen raster"
+
+msgid "Point"
+msgstr "Punt"
+
+msgid "↶ Annuler"
+msgstr "↶ Ongedaan maken"
+
+msgid "🔄 Reset"
+msgstr "🔄 Resetten"
+
+msgid "💾 Sauvegarder"
+msgstr "💾 Opslaan"
+
+msgid "💾 Télécharger"
+msgstr "💾 Downloaden"
+
+msgid "Total"
+msgstr "Totaal"
+
+msgid "fourmis"
+msgstr "mieren"
+
+msgid "📸 Chargez une photo"
+msgstr "📸 Laad een foto"
+
+msgid "Fourmis comptées"
+msgstr "Mieren geteld"
+
+msgid "Temps"
+msgstr "Tijd"
+
+msgid "📊 Historique des comptages"
+msgstr "📊 Telgeschiedenis"
+
+msgid "Image"
+msgstr "Afbeelding"
+
+msgid "Titre"
+msgstr "Titel"
+
+msgid "Annotations"
+msgstr "Annotaties"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Actions"
+msgstr "Acties"
+
+msgid "Suppr."
+msgstr "Verw."
+
+msgid "Aucune image pour le moment."
+msgstr "Nog geen afbeeldingen."
+
+msgid "Supprimer cette image et ses annotations ?"
+msgstr "Deze afbeelding en annotaties verwijderen?"
+
+msgid "Connexion"
+msgstr "Inloggen"
+
+msgid "Se connecter"
+msgstr "Inloggen"
+
+msgid "Pas de compte ?"
+msgstr "Geen account?"
+
+msgid "Inscrivez-vous"
+msgstr "Registreren"
+
+msgid "Inscription"
+msgstr "Registratie"
+
+msgid "S'inscrire"
+msgstr "Registreren"
+
+msgid "Déjà inscrit ?"
+msgstr "Al geregistreerd?"
+
+msgid "Connectez-vous"
+msgstr "Log in"
+
+msgid "utilisateur"
+msgstr "gebruiker"
+
+msgid "titre"
+msgstr "titel"
+
+msgid "image"
+msgstr "afbeelding"
+
+msgid "largeur"
+msgstr "breedte"
+
+msgid "hauteur"
+msgstr "hoogte"
+
+msgid "uploadé le"
+msgstr "geüpload op"
+
+msgid "image utilisateur"
+msgstr "gebruikersafbeelding"
+
+msgid "images utilisateurs"
+msgstr "gebruikersafbeeldingen"
+
+msgid "coordonnée X"
+msgstr "X-coördinaat"
+
+msgid "coordonnée Y"
+msgstr "Y-coördinaat"
+
+msgid "étiquette"
+msgstr "label"
+
+msgid "créé le"
+msgstr "aangemaakt op"
+
+msgid "annotation fourmi"
+msgstr "mierannotatie"
+
+msgid "annotations fourmis"
+msgstr "mierannotaties"
+
+msgid "Ex: Colonie A - 2024-03-15"
+msgstr "Bijv.: Kolonie A - 2024-03-15"
+
+msgid "Ex: Messor barbarus"
+msgstr "Bijv.: Messor barbarus"
+
+msgid "Ce champ est requis."
+msgstr "Dit veld is verplicht."
+
+msgid "API GBIF indisponible"
+msgstr "GBIF API niet beschikbaar"
+
+msgid "Erreur de connexion à GBIF"
+msgstr "GBIF-verbindingsfout"
+
+msgid "Français"
+msgstr "Frans"
+
+msgid "English"
+msgstr "Engels"
+
+msgid "Nederlands"
+msgstr "Nederlands"
+
+msgid "Deutsch"
+msgstr "Duits"

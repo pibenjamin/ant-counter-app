@@ -1,19 +1,20 @@
 {% extends "counter/base.html" %}
-{% block title %}Historique - AntCounter{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Historique" %} - AntCounter{% endblock %}
 {% block content %}
-<h4>📊 Historique des comptages</h4>
+<h4>{% trans "📊 Historique des comptages" %}</h4>
 
 {% if images %}
     <div class="table-responsive">
         <table class="table table-hover">
             <thead class="table-success">
                 <tr>
-                    <th>Image</th>
-                    <th>Titre</th>
-                    <th>Espèce</th>
-                    <th>Annotations</th>
-                    <th>Date</th>
-                    <th>Actions</th>
+                    <th>{% trans "Image" %}</th>
+                    <th>{% trans "Titre" %}</th>
+                    <th>{% trans "Espèce" %}</th>
+                    <th>{% trans "Annotations" %}</th>
+                    <th>{% trans "Date" %}</th>
+                    <th>{% trans "Actions" %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,8 +26,8 @@
                     <td><span class="badge bg-primary">{{ img.annotations.count }}</span></td>
                     <td>{{ img.uploaded_at|date:"d/m/Y H:i" }}</td>
                     <td>
-                        <a href="{% url 'counter:count' img.pk %}" class="btn btn-sm btn-success">Compter</a>
-                        <button class="btn btn-sm btn-danger delete-btn" data-id="{{ img.pk }}">Suppr.</button>
+                        <a href="{% url 'counter:count' img.pk %}" class="btn btn-sm btn-success">{% trans "Compter" %}</a>
+                        <button class="btn btn-sm btn-danger delete-btn" data-id="{{ img.pk }}">{% trans "Suppr." %}</button>
                     </td>
                 </tr>
                 {% endfor %}
@@ -34,7 +35,7 @@
         </table>
     </div>
 {% else %}
-    <div class="alert alert-info">Aucune image pour le moment.</div>
+    <div class="alert alert-info">{% trans "Aucune image pour le moment." %}</div>
 {% endif %}
 {% endblock %}
 
@@ -42,7 +43,7 @@
 <script>
 document.querySelectorAll('.delete-btn').forEach(btn => {
     btn.addEventListener('click', function() {
-        if (!confirm('Supprimer cette image et ses annotations ?')) return;
+        if (!confirm('{% trans "Supprimer cette image et ses annotations ?" %}')) return;
         const id = this.dataset.id;
         fetch(`/api/delete-image/${id}/`, { method: 'POST', headers: {'X-CSRFToken': '{{ csrf_token }}'} })
             .then(r => r.json())

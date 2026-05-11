@@ -7,6 +7,7 @@ urlpatterns = [
     path("grappelli/", include("grappelli.urls")),
     path("admin/", admin_site.urls),
     path("accounts/", include("allauth.urls")),
+    path("i18n/", include("django.conf.urls.i18n")),
     path("", include("counter.urls")),
 ]
 

@@ -1,0 +1,234 @@
+# German translations for AntCounter.
+# Copyright (C) 2026 AntCounter
+# This file is distributed under the same license as the AntCounter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AntCounter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-11 16:00+0100\n"
+"PO-Revision-Date: 2026-05-11 16:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Compteur de Fourmis"
+msgstr "Ameisenzähler"
+
+msgid "Tableau de bord"
+msgstr "Dashboard"
+
+msgid "Uploader une photo"
+msgstr "Foto hochladen"
+
+msgid "Historique"
+msgstr "Verlauf"
+
+msgid "Déconnexion"
+msgstr "Abmelden"
+
+msgid "Images uploadées"
+msgstr "Hochgeladene Bilder"
+
+msgid "Fourmis comptées"
+msgstr "Ameisen gezählt"
+
+msgid "Action"
+msgstr "Aktion"
+
+msgid "+ Uploader une photo"
+msgstr "+ Foto hochladen"
+
+msgid "Dernières images"
+msgstr "Neueste Bilder"
+
+msgid "annotations"
+msgstr "Annotationen"
+
+msgid "Compter"
+msgstr "Zählen"
+
+msgid "Aucune image uploadée."
+msgstr "Keine Bilder hochgeladen."
+
+msgid "Uploader votre première photo"
+msgstr "Lade dein erstes Foto hoch"
+
+msgid "📸 Uploader une photo"
+msgstr "📸 Foto hochladen"
+
+msgid "Uploader et compter"
+msgstr "Hochladen & zählen"
+
+msgid "Comptage"
+msgstr "Zählung"
+
+msgid "🐜 Comptage manuel"
+msgstr "🐜 Manuelles Zählen"
+
+msgid "Espèce"
+msgstr "Art"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Grille"
+msgstr "Gitter"
+
+msgid "Pas de grille"
+msgstr "Kein Gitter"
+
+msgid "Point"
+msgstr "Punkt"
+
+msgid "↶ Annuler"
+msgstr "↶ Rückgängig"
+
+msgid "🔄 Reset"
+msgstr "🔄 Zurücksetzen"
+
+msgid "💾 Sauvegarder"
+msgstr "💾 Speichern"
+
+msgid "💾 Télécharger"
+msgstr "💾 Herunterladen"
+
+msgid "Total"
+msgstr "Gesamt"
+
+msgid "fourmis"
+msgstr "Ameisen"
+
+msgid "📸 Chargez une photo"
+msgstr "📸 Lade ein Foto"
+
+msgid "Fourmis comptées"
+msgstr "Ameisen gezählt"
+
+msgid "Temps"
+msgstr "Zeit"
+
+msgid "📊 Historique des comptages"
+msgstr "📊 Zählverlauf"
+
+msgid "Image"
+msgstr "Bild"
+
+msgid "Titre"
+msgstr "Titel"
+
+msgid "Annotations"
+msgstr "Annotationen"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Actions"
+msgstr "Aktionen"
+
+msgid "Suppr."
+msgstr "Lösch."
+
+msgid "Aucune image pour le moment."
+msgstr "Noch keine Bilder."
+
+msgid "Supprimer cette image et ses annotations ?"
+msgstr "Dieses Bild und seine Annotationen löschen?"
+
+msgid "Connexion"
+msgstr "Anmelden"
+
+msgid "Se connecter"
+msgstr "Anmelden"
+
+msgid "Pas de compte ?"
+msgstr "Kein Konto?"
+
+msgid "Inscrivez-vous"
+msgstr "Registrieren"
+
+msgid "Inscription"
+msgstr "Registrierung"
+
+msgid "S'inscrire"
+msgstr "Registrieren"
+
+msgid "Déjà inscrit ?"
+msgstr "Bereits registriert?"
+
+msgid "Connectez-vous"
+msgstr "Anmelden"
+
+msgid "utilisateur"
+msgstr "Benutzer"
+
+msgid "titre"
+msgstr "Titel"
+
+msgid "image"
+msgstr "Bild"
+
+msgid "largeur"
+msgstr "Breite"
+
+msgid "hauteur"
+msgstr "Höhe"
+
+msgid "uploadé le"
+msgstr "hochgeladen am"
+
+msgid "image utilisateur"
+msgstr "Benutzerbild"
+
+msgid "images utilisateurs"
+msgstr "Benutzerbilder"
+
+msgid "coordonnée X"
+msgstr "X-Koordinate"
+
+msgid "coordonnée Y"
+msgstr "Y-Koordinate"
+
+msgid "étiquette"
+msgstr "Etikett"
+
+msgid "créé le"
+msgstr "erstellt am"
+
+msgid "annotation fourmi"
+msgstr "Ameisenannotation"
+
+msgid "annotations fourmis"
+msgstr "Ameisenannotationen"
+
+msgid "Ex: Colonie A - 2024-03-15"
+msgstr "Z.B.: Kolonie A - 2024-03-15"
+
+msgid "Ex: Messor barbarus"
+msgstr "Z.B.: Messor barbarus"
+
+msgid "Ce champ est requis."
+msgstr "Dieses Feld ist erforderlich."
+
+msgid "API GBIF indisponible"
+msgstr "GBIF-API nicht verfügbar"
+
+msgid "Erreur de connexion à GBIF"
+msgstr "GBIF-Verbindungsfehler"
+
+msgid "Français"
+msgstr "Französisch"
+
+msgid "English"
+msgstr "Englisch"
+
+msgid "Nederlands"
+msgstr "Niederländisch"
+
+msgid "Deutsch"
+msgstr "Deutsch"

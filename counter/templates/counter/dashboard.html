@@ -1,11 +1,12 @@
 {% extends "counter/base.html" %}
-{% block title %}Tableau de bord - AntCounter{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Tableau de bord" %} - AntCounter{% endblock %}
 {% block content %}
 <div class="row mb-4">
     <div class="col-md-4">
         <div class="card text-bg-success">
             <div class="card-body text-center">
-                <h5 class="card-title">Images uploadées</h5>
+                <h5 class="card-title">{% trans "Images uploadées" %}</h5>
                 <p class="display-6">{{ total_images }}</p>
             </div>
         </div>
@@ -13,7 +14,7 @@
     <div class="col-md-4">
         <div class="card text-bg-primary">
             <div class="card-body text-center">
-                <h5 class="card-title">Fourmis comptées</h5>
+                <h5 class="card-title">{% trans "Fourmis comptées" %}</h5>
                 <p class="display-6">{{ total_ants }}</p>
             </div>
         </div>
@@ -21,14 +22,14 @@
     <div class="col-md-4">
         <div class="card text-bg-warning">
             <div class="card-body text-center">
-                <h5 class="card-title">Action</h5>
-                <a href="{% url 'counter:upload' %}" class="btn btn-light mt-2">+ Uploader une photo</a>
+                <h5 class="card-title">{% trans "Action" %}</h5>
+                <a href="{% url 'counter:upload' %}" class="btn btn-light mt-2">{% trans "+ Uploader une photo" %}</a>
             </div>
         </div>
     </div>
 </div>
 
-<h4>Dernières images</h4>
+<h4>{% trans "Dernières images" %}</h4>
 <div class="row">
     {% for img in images %}
         <div class="col-md-4 col-lg-3 mb-3">
@@ -39,16 +40,16 @@
                 <div class="card-body">
                     <h6 class="card-title">{{ img.title|default:img.image.name|truncatechars:30 }}</h6>
                     <p class="card-text small text-muted">
-                        {{ img.annotations.count }} annotations<br>
+                        {{ img.annotations.count }} {% trans "annotations" %}<br>
                         {{ img.uploaded_at|date:"d/m/Y H:i" }}
                     </p>
-                    <a href="{% url 'counter:count' img.pk %}" class="btn btn-sm btn-outline-success">Compter</a>
+                    <a href="{% url 'counter:count' img.pk %}" class="btn btn-sm btn-outline-success">{% trans "Compter" %}</a>
                 </div>
             </div>
         </div>
     {% empty %}
         <div class="col-12">
-            <div class="alert alert-info">Aucune image uploadée. <a href="{% url 'counter:upload' %}">Uploader votre première photo</a>.</div>
+            <div class="alert alert-info">{% trans "Aucune image uploadée." %} <a href="{% url 'counter:upload' %}">{% trans "Uploader votre première photo" %}</a>.</div>
         </div>
     {% endfor %}
 </div>

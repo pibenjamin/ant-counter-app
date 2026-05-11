@@ -1,0 +1,237 @@
+# French translations for AntCounter.
+# Copyright (C) 2026 AntCounter
+# This file is distributed under the same license as the AntCounter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AntCounter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-11 16:00+0100\n"
+"PO-Revision-Date: 2026-05-11 16:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Compteur de Fourmis"
+msgstr "Compteur de Fourmis"
+
+msgid "Tableau de bord"
+msgstr "Tableau de bord"
+
+msgid "Uploader une photo"
+msgstr "Uploader une photo"
+
+msgid "Historique"
+msgstr "Historique"
+
+msgid "Déconnexion"
+msgstr "Déconnexion"
+
+msgid "Images uploadées"
+msgstr "Images uploadées"
+
+msgid "Fourmis comptées"
+msgstr "Fourmis comptées"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "+ Uploader une photo"
+msgstr "+ Uploader une photo"
+
+msgid "Dernières images"
+msgstr "Dernières images"
+
+msgid "annotations"
+msgstr "annotations"
+
+msgid "Compter"
+msgstr "Compter"
+
+msgid "Aucune image uploadée."
+msgstr "Aucune image uploadée."
+
+msgid "Uploader votre première photo"
+msgstr "Uploader votre première photo"
+
+msgid "📸 Uploader une photo"
+msgstr "📸 Uploader une photo"
+
+msgid "Uploader et compter"
+msgstr "Uploader et compter"
+
+msgid "Comptage"
+msgstr "Comptage"
+
+msgid "🐜 Comptage manuel"
+msgstr "🐜 Comptage manuel"
+
+msgid "Espèce"
+msgstr "Espèce"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Grille"
+msgstr "Grille"
+
+msgid "Pas de grille"
+msgstr "Pas de grille"
+
+msgid "Point"
+msgstr "Point"
+
+msgid "↶ Annuler"
+msgstr "↶ Annuler"
+
+msgid "🔄 Reset"
+msgstr "🔄 Reset"
+
+msgid "💾 Sauvegarder"
+msgstr "💾 Sauvegarder"
+
+msgid "💾 Télécharger"
+msgstr "💾 Télécharger"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "fourmis"
+msgstr "fourmis"
+
+msgid "📸 Chargez une photo"
+msgstr "📸 Chargez une photo"
+
+msgid "Fourmis comptées"
+msgstr "Fourmis comptées"
+
+msgid "Temps"
+msgstr "Temps"
+
+msgid "📊 Historique des comptages"
+msgstr "📊 Historique des comptages"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Titre"
+msgstr "Titre"
+
+msgid "Annotations"
+msgstr "Annotations"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Suppr."
+msgstr "Suppr."
+
+msgid "Aucune image pour le moment."
+msgstr "Aucune image pour le moment."
+
+msgid "Supprimer cette image et ses annotations ?"
+msgstr "Supprimer cette image et ses annotations ?"
+
+msgid "Connexion"
+msgstr "Connexion"
+
+msgid "Se connecter"
+msgstr "Se connecter"
+
+msgid "Pas de compte ?"
+msgstr "Pas de compte ?"
+
+msgid "Inscrivez-vous"
+msgstr "Inscrivez-vous"
+
+msgid "Inscription"
+msgstr "Inscription"
+
+msgid "S'inscrire"
+msgstr "S'inscrire"
+
+msgid "Déjà inscrit ?"
+msgstr "Déjà inscrit ?"
+
+msgid "Connectez-vous"
+msgstr "Connectez-vous"
+
+msgid "utilisateur"
+msgstr "utilisateur"
+
+msgid "titre"
+msgstr "titre"
+
+msgid "image"
+msgstr "image"
+
+msgid "largeur"
+msgstr "largeur"
+
+msgid "hauteur"
+msgstr "hauteur"
+
+msgid "uploadé le"
+msgstr "uploadé le"
+
+msgid "image utilisateur"
+msgstr "image utilisateur"
+
+msgid "images utilisateurs"
+msgstr "images utilisateurs"
+
+msgid "coordonnée X"
+msgstr "coordonnée X"
+
+msgid "coordonnée Y"
+msgstr "coordonnée Y"
+
+msgid "étiquette"
+msgstr "étiquette"
+
+msgid "créé le"
+msgstr "créé le"
+
+msgid "annotation fourmi"
+msgstr "annotation fourmi"
+
+msgid "annotations fourmis"
+msgstr "annotations fourmis"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Ex: Colonie A - 2024-03-15"
+msgstr "Ex: Colonie A - 2024-03-15"
+
+msgid "Ex: Messor barbarus"
+msgstr "Ex: Messor barbarus"
+
+msgid "Ce champ est requis."
+msgstr "Ce champ est requis."
+
+msgid "API GBIF indisponible"
+msgstr "API GBIF indisponible"
+
+msgid "Erreur de connexion à GBIF"
+msgstr "Erreur de connexion à GBIF"
+
+msgid "Français"
+msgstr "Français"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "Nederlands"
+msgstr "Néerlandais"
+
+msgid "Deutsch"
+msgstr "Allemand"

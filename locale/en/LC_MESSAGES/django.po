@@ -1,0 +1,231 @@
+# English translations for AntCounter.
+# Copyright (C) 2026 AntCounter
+# This file is distributed under the same license as the AntCounter package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AntCounter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-11 16:00+0100\n"
+"PO-Revision-Date: 2026-05-11 16:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Compteur de Fourmis"
+msgstr "Ant Counter"
+
+msgid "Tableau de bord"
+msgstr "Dashboard"
+
+msgid "Uploader une photo"
+msgstr "Upload a photo"
+
+msgid "Historique"
+msgstr "History"
+
+msgid "Déconnexion"
+msgstr "Log out"
+
+msgid "Images uploadées"
+msgstr "Uploaded images"
+
+msgid "Fourmis comptées"
+msgstr "Ants counted"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "+ Uploader une photo"
+msgstr "+ Upload a photo"
+
+msgid "Dernières images"
+msgstr "Latest images"
+
+msgid "annotations"
+msgstr "annotations"
+
+msgid "Compter"
+msgstr "Count"
+
+msgid "Aucune image uploadée."
+msgstr "No images uploaded."
+
+msgid "Uploader votre première photo"
+msgstr "Upload your first photo"
+
+msgid "📸 Uploader une photo"
+msgstr "📸 Upload a photo"
+
+msgid "Uploader et compter"
+msgstr "Upload & count"
+
+msgid "Comptage"
+msgstr "Counting"
+
+msgid "🐜 Comptage manuel"
+msgstr "🐜 Manual counting"
+
+msgid "Espèce"
+msgstr "Species"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Grille"
+msgstr "Grid"
+
+msgid "Pas de grille"
+msgstr "No grid"
+
+msgid "Point"
+msgstr "Point"
+
+msgid "↶ Annuler"
+msgstr "↶ Undo"
+
+msgid "🔄 Reset"
+msgstr "🔄 Reset"
+
+msgid "💾 Sauvegarder"
+msgstr "💾 Save"
+
+msgid "💾 Télécharger"
+msgstr "💾 Download"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "fourmis"
+msgstr "ants"
+
+msgid "📸 Chargez une photo"
+msgstr "📸 Load a photo"
+
+msgid "Temps"
+msgstr "Time"
+
+msgid "📊 Historique des comptages"
+msgstr "📊 Counting history"
+
+msgid "Image"
+msgstr "Image"
+
+msgid "Titre"
+msgstr "Title"
+
+msgid "Annotations"
+msgstr "Annotations"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Suppr."
+msgstr "Del."
+
+msgid "Aucune image pour le moment."
+msgstr "No images yet."
+
+msgid "Supprimer cette image et ses annotations ?"
+msgstr "Delete this image and its annotations?"
+
+msgid "Connexion"
+msgstr "Log in"
+
+msgid "Se connecter"
+msgstr "Log in"
+
+msgid "Pas de compte ?"
+msgstr "No account?"
+
+msgid "Inscrivez-vous"
+msgstr "Sign up"
+
+msgid "Inscription"
+msgstr "Sign up"
+
+msgid "S'inscrire"
+msgstr "Sign up"
+
+msgid "Déjà inscrit ?"
+msgstr "Already registered?"
+
+msgid "Connectez-vous"
+msgstr "Log in"
+
+msgid "utilisateur"
+msgstr "user"
+
+msgid "titre"
+msgstr "title"
+
+msgid "image"
+msgstr "image"
+
+msgid "largeur"
+msgstr "width"
+
+msgid "hauteur"
+msgstr "height"
+
+msgid "uploadé le"
+msgstr "uploaded at"
+
+msgid "image utilisateur"
+msgstr "user image"
+
+msgid "images utilisateurs"
+msgstr "user images"
+
+msgid "coordonnée X"
+msgstr "X coordinate"
+
+msgid "coordonnée Y"
+msgstr "Y coordinate"
+
+msgid "étiquette"
+msgstr "label"
+
+msgid "créé le"
+msgstr "created at"
+
+msgid "annotation fourmi"
+msgstr "ant annotation"
+
+msgid "annotations fourmis"
+msgstr "ant annotations"
+
+msgid "Ex: Colonie A - 2024-03-15"
+msgstr "E.g.: Colony A - 2024-03-15"
+
+msgid "Ex: Messor barbarus"
+msgstr "E.g.: Messor barbarus"
+
+msgid "Ce champ est requis."
+msgstr "This field is required."
+
+msgid "API GBIF indisponible"
+msgstr "GBIF API unavailable"
+
+msgid "Erreur de connexion à GBIF"
+msgstr "GBIF connection error"
+
+msgid "Français"
+msgstr "French"
+
+msgid "English"
+msgstr "English"
+
+msgid "Nederlands"
+msgstr "Dutch"
+
+msgid "Deutsch"
+msgstr "German"

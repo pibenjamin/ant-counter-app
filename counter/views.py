@@ -6,6 +6,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.conf import settings
 from django.db import transaction
+from django.utils.translation import gettext_lazy as _
 from PIL import Image as PILImage
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
@@ -32,13 +33,13 @@ def species_suggest(request):
             timeout=5,
         )
         if resp.status_code != 200:
-            return Response({"error": "API GBIF indisponible"}, status=status.HTTP_502_BAD_GATEWAY)
+            return Response({"error": _("API GBIF indisponible")}, status=status.HTTP_502_BAD_GATEWAY)
 
         data = [s for s in resp.json() if s.get("family") == "Formicidae"]
         return Response(data)
 
     except requests.RequestException:
-        return Response({"error": "Erreur de connexion à GBIF"}, status=status.HTTP_502_BAD_GATEWAY)
+        return Response({"error": _("Erreur de connexion à GBIF")}, status=status.HTTP_502_BAD_GATEWAY)
 
 
 @login_required
