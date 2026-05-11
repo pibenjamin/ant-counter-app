@@ -45,3 +45,22 @@ class AntAnnotation(models.Model):
 
     def __str__(self):
         return f"#{self.label} ({self.x:.1f}, {self.y:.1f})"
+
+
+class ModelTrainingPic(models.Model):
+    source = models.ForeignKey(
+        UserImage, on_delete=models.SET_NULL, null=True, blank=True, related_name="training_pics"
+    )
+    image = models.ImageField(upload_to="training/")
+    width = models.PositiveIntegerField()
+    height = models.PositiveIntegerField()
+    species = models.CharField(max_length=255, blank=True, default="")
+    title = models.CharField(max_length=255, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = _("image d'entraînement")
+        verbose_name_plural = _("images d'entraînement")
+
+    def __str__(self):
+        return f"Training {self.title or self.image.name} ({self.width}x{self.height})"

@@ -1,5 +1,7 @@
 import json
+import os
 import requests
+from django.core.files.base import ContentFile
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -12,7 +14,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from accounts.auth import HasValidAccess
-from .models import UserImage, AntAnnotation
+from .models import UserImage, AntAnnotation, ModelTrainingPic
 from .forms import ImageUploadForm
 
 
@@ -64,6 +66,19 @@ def upload_image(request):
             img.save()
             img.width, img.height = PILImage.open(img.image.path).size
             img.save(update_fields=["width", "height"])
+
+            if img.width > 1280 or img.height > 1280:
+                with open(img.image.path, "rb") as f:
+                    content = f.read()
+                training = ModelTrainingPic(
+                    source=img,
+                    width=img.width,
+                    height=img.height,
+                    species=img.species,
+                    title=img.title,
+                )
+                training.image.save(os.path.basename(img.image.name), ContentFile(content))
+
             return redirect("counter:count", image_id=img.pk)
     else:
         form = ImageUploadForm()

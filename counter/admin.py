@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.db.models import Q
 from accounts.admin import admin_site
-from .models import UserImage, AntAnnotation
+from .models import UserImage, AntAnnotation, ModelTrainingPic
 
 
 class LargeImageFilter(admin.SimpleListFilter):
@@ -67,3 +67,20 @@ class AntAnnotationAdmin(admin.ModelAdmin):
     list_display = ("id", "image", "label", "x", "y", "created_at")
     list_filter = ("created_at",)
     search_fields = ("image__title", "image__user__email")
+
+
+@admin.register(ModelTrainingPic, site=admin_site)
+class ModelTrainingPicAdmin(admin.ModelAdmin):
+    list_display = ("title", "species", "width", "height", "image_preview", "source", "created_at")
+    list_filter = ("species", "created_at")
+    search_fields = ("title", "species", "source__user__email")
+    readonly_fields = ("width", "height", "created_at", "image_preview")
+
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" width="80" height="60" style="object-fit:cover;border-radius:4px;">',
+                obj.image.url,
+            )
+        return "-"
+    image_preview.short_description = "Aperçu"
